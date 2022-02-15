@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  rabbitmq:
+    image: rabbitmq:3.8-management-alpine
+    container_name: "rabbitmqdemo"
+    env_file:
+      - ./rabbitmq-config.env
+    ports:
+      - '5672:5672'
+      # AMQP protocol port
+      - '15672:15672'
+      # HTTP management UI
